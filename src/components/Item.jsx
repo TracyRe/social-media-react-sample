@@ -19,19 +19,18 @@ function Item(props) {
   }
   return (
     <div style={itemStyles}>
-      <img style={picStyle} src={props.imageUrl} alt="pic"/>
       <div >
-        <p style={contentStyle}><strong>{props.name}</strong></p>
-        <p>{props.content}</p>
+        <p>{props.text}</p>
       </div>
     </div>
   );
 }
 
 Item.propTypes = {
-  imageUrl: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired
+
+  text: PropTypes.string.isRequired
 }
 
-export default Item;
+export default Item
+
+//<img style={picStyle} src={props.imageUrl} alt="pic"/>
