@@ -19,8 +19,8 @@ function Post(props) {
   const postStyle = {
     backgroundColor: '#a6d8f1',
     display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
+    flexFlow: 'row nowrap',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     height: '60px',
     width: '100%'
@@ -28,24 +28,46 @@ function Post(props) {
   const profStyle = {
     backgroundColor: '#740504',
     width: '30px',
-    height: '30px'
+    height: '30px',
+    margin: '0 10px'
+  }
+
+  const formWidth = {
+    width: '75%'
+  }
+
+  const formStyle = {
+    height: '30px',
+    width: '100%',
+    border: '2px solid #00b3f2',
+    backgroundColor: '#fff'
+
   }
   const inputStyle = {
-    width: '70%',
-    height: '40px',
-    border: '2px solid #00b3f2',
-    paddingLeft: '20px'
+    border: '0',
+    paddingLeft: '20px',
+    backgroundColor: "#fff",
+    height: 'calc(100% - 2px)',
+    border: '0',
+    width: 'calc(100% - 22px)',
+  }
+
+  const buttonStyle ={
+    textTransform: 'uppercase',
+    marginLeft: '10px'
   }
 
   return (
     <div style={postStyle}>
       <div style={profStyle}></div>
 
-      <form>
-        <input style={inputStyle} placeholder='What&apos;s happening?' type='text'
-        ref={(input) => {_post = input;}}/>
-      <button onClick={handleNewPost}>Post</button>
+      <form style={formWidth}>
+        <div style={formStyle}>
+          <input style={inputStyle}placeholder='What&apos;s happening?' type='text'
+            ref={(input) => {_post = input;}}/>
+        </div>
       </form>
+      <button style={buttonStyle} onClick={handleNewPost}>Post</button>
     </div>
   );
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import imageUrl from 'https://source.unsplash.com/random/75x75';
+
 
 function Item(props) {
   const itemStyles = {
     display: "flex",
     flexDirection: "row",
-    padding: "10px 5px 20px 5px",
+    padding: "10px 5px 0px 5px",
     alignItems: "flex-start"
   }
   const picStyle = {
@@ -16,11 +16,12 @@ function Item(props) {
   }
   const contentStyle = {
     marginTop: "0px",
-    color: "#606060"
+    color: "#606060",
+    fontSize: '.9rem'
   }
   return (
     <div style={itemStyles}>
-      <img style={picStyle} src={props.imageUrl} alt="pic"/>
+      <img style={picStyle} src='https://source.unsplash.com/random/75x75' alt="pic"/>
       <div style={contentStyle}>
         <p>{props.text}</p>
       </div>
