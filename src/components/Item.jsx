@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import imageUrl from 'https://source.unsplash.com/random/75x75';
 
 function Item(props) {
   const itemStyles = {
@@ -19,18 +20,15 @@ function Item(props) {
   }
   return (
     <div style={itemStyles}>
-      <div >
+      <img style={picStyle} src={props.imageUrl} alt="pic"/>
+      <div style={contentStyle}>
         <p>{props.text}</p>
       </div>
     </div>
   );
 }
-
 Item.propTypes = {
-
   text: PropTypes.string.isRequired
 }
 
 export default Item
-
-//<img style={picStyle} src={props.imageUrl} alt="pic"/>

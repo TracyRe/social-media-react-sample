@@ -4,18 +4,17 @@ import Post from './Post';
 
 class Feed extends React.Component {
 
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
     masterFeed: []
   };
 
   this.handleAddingNewPostsToFeed = this.handleAddingNewPostsToFeed.bind(this);
-  console.log(props.onNewPostCreation);
-  console.log(this.handleAddingNewPostsToFeed);
 }
 
 handleAddingNewPostsToFeed(newPost){
+  console.log('function triggered', newPost);
   var newMasterFeed = this.state.masterFeed.slice();
   newMasterFeed.push(newPost);
   this.setState({masterFeed: newMasterFeed});
@@ -29,8 +28,8 @@ render(){
   }
   return (
     <div style={feedStyles}>
-      <Post render={() => <Post onNewPostCreation={this.props.onNewPostCreation} />} />
-      <ItemList render={() => <ItemList itemList={this.state.masterFeed} />} />
+      <Post  onNewPostCreation={this.handleAddingNewPostsToFeed} />
+      <ItemList itemList={this.state.masterFeed} /> 
     </div>
   );
 

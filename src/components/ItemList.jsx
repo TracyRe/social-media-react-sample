@@ -6,14 +6,16 @@ import { v4 } from 'uuid';
 function ItemList(props) {
 console.log(props.itemList);
   var itemListStyles = {
-    padding: '0 20px'
+    padding: '0 20px',
+    color: 'blue'
   }
 
   return (
     <div style={itemListStyles}>
-
-      <hr/>
-
+      {props.itemList.map((item, index) =>
+        <Item text={item.post}
+          key={item.id}/>
+      )}
     </div>
   );
 }
@@ -27,9 +29,3 @@ export default ItemList;
 
 //  callback:  onNewPostCreation
 //imageUrl = "https://source.unsplash.com/random/75x75"
-
-
-// {props.itemList.map((post, index) =>
-//     <Item text={post.text}
-//       key={post.id}/>
-//     )}

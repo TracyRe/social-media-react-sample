@@ -7,10 +7,10 @@ function Post(props) {
   let _post =null;
 
   function handleNewPost(event) {
+    event.preventDefault();
     console.log(_post.value);
-    console.log(this.props);
+    console.log(props);
     console.log('hello');
-  //  event.preventDefault();
     props.onNewPostCreation({post: _post.value, id: v4()});
     _post.value = '';
     console.log(props.onNewPostCreation);
@@ -44,7 +44,7 @@ function Post(props) {
       <form>
         <input style={inputStyle} placeholder='What&apos;s happening?' type='text'
         ref={(input) => {_post = input;}}/>
-      <button onClick={handleNewPost} type='submit'>Post</button>
+      <button onClick={handleNewPost}>Post</button>
       </form>
     </div>
   );
